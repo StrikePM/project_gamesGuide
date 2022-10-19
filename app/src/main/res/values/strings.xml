@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GamesGuide</string>
+    <string name="fiora_story">The most feared duelist in all Valoran, Fiora is as renowned for her brusque manner and political cunning as she is for the speed of her rapier. Born to the noble Laurent family in Demacia, Fiora claimed the household from her father in the wake of a scandal that nearly destroyed them—now she is dedicated to restoring the Laurents to their rightful place among the great and good of the kingdom.</string>
+    <string name="fiora_role">Baron Laner</string>
+    <string name="fiora_build">Fighter</string>
+    <string name="gwen_story">A former doll transformed and brought to life by magic, Gwen wields the very tools that once created her. She carries the weight of her maker’s love with every step, taking nothing for granted. At her command is the Hallowed Mist, an ancient and protective magic that has blessed Gwen’s scissors, needles, and sewing thread. So much is new to her, but Gwen remains joyfully determined to fight for the good that survives in a broken world.</string>
+    <string name="gwen_role">Junggle, Baron Laner</string>
+    <string name="gwen_build">Fighter</string>
+    <string name="sett_story">A leader of Ionia’s growing criminal underworld, Sett rose to prominence in the wake of the war with Noxus. Though he began as a humble challenger in the fighting pits of Navori, he quickly gained notoriety for his savage strength, and his ability to take seemingly endless amounts of punishment. Now, having climbed through the ranks of local combatants, Sett has muscled to the top, reigning over the pits he once fought in.</string>
+    <string name="sett_role">Baron Laner</string>
+    <string name="sett_build">Fighter</string>
+    <string name="darius_story">There is no greater symbol of Noxian might than Darius, the nation’s most feared and battle-hardened leader. Rising from humble origins to become the Hand of Noxus, he cleaves through the empire’s enemies—many of them Noxians themselves. Knowing that he never doubts his cause is just, and never hesitates once his axe is raised, those who stand against the commander of the Trifarian Legion can expect no mercy.</string>
+    <string name="darius_role">Baron Laner</string>
+    <string name="darius_build">Fighter</string>
+    <string name="diana_story">Bearing her crescent moonblade and clad in shimmering armor the color of winter snow at night, Diana is a living embodiment of the silver moon’s power. Imbued with the essence of an Aspect from beyond Targon’s towering summit, Diana is no longer wholly human, and struggles to understand her power and purpose in this world.</string>
+    <string name="diana_role">Mid Laner, Baron Laner</string>
+    <string name="diana_build">Fighter</string>
+</resources>
