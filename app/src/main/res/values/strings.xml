@@ -15,4 +15,26 @@
     <string name="diana_story">Bearing her crescent moonblade and clad in shimmering armor the color of winter snow at night, Diana is a living embodiment of the silver moon’s power. Imbued with the essence of an Aspect from beyond Targon’s towering summit, Diana is no longer wholly human, and struggles to understand her power and purpose in this world.</string>
     <string name="diana_role">Mid Laner, Baron Laner</string>
     <string name="diana_build">Fighter</string>
+    <string-array name="champion">
+        <item>Gwen</item>
+        <item>Sett</item>
+        <item>Diana</item>
+        <item>Darius</item>
+    </string-array>
+    <string-array name="difficulty">
+        <item>4.0</item>
+        <item>4.5</item>
+        <item>4.0</item>
+        <item>4.0</item>
+    </string-array>
+    <string-array name="role">
+        <item>Jungle, Baron Laner</item>
+        <item>Baron Laner</item>
+        <item>Mid Laner, Baron Laner</item>
+        <item>Baron Laner</item>
+    </string-array>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
