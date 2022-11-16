@@ -13,5 +13,9 @@
             android:id="@+id/nav_items"
             android:icon="@drawable/ic_baseline_items_24"
             android:title="Items" />
+        <item
+            android:id="@+id/nav_alarm"
+            android:icon="@drawable/ic_baseline_book_24"
+            android:title="Alarm" />
     </group>
 </menu>
