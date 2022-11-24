@@ -9,16 +9,22 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.work.ExistingWorkPolicy;
+import androidx.work.OneTimeWorkRequest;
+import androidx.work.WorkManager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.gamesguide.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawer;
+    private ActivityMainBinding binding;
+
     RecyclerView recyclerView;
     String nama[], diff[], role[];
     int img[] = {R.drawable.gwen_0, R.drawable.sett_0, R.drawable.diana_0, R.drawable.darius_0};
@@ -53,6 +59,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         LinearLayoutManager lm = new LinearLayoutManager((this),
                 LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(lm);
+
+        //code work manager
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        final OneTimeWorkRequest request = new OneTimeWorkRequest.Builder(MyWorker.class).build();
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WorkManager.getInstance().enqueueUniqueWork("Notifikasi",
+                        ExistingWorkPolicy.REPLACE, request);
+            }
+        });
     }
 
     @Override
