@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/purple_700"
+            app:titleTextColor="@color/white"
             android:elevation="4dp"
             android:theme="@style/Theme.AppCompat.DayNight"
             app:popupTheme="@style/Theme.AppCompat.DayNight"
@@ -231,6 +232,7 @@
             </ScrollView>
         </FrameLayout>
     </LinearLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -240,5 +242,5 @@
         android:background="@color/grey_card"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
-        app:menu="@menu/draw_menu"/>
+        app:menu="@menu/draw_menuu"/>
 </androidx.drawerlayout.widget.DrawerLayout>

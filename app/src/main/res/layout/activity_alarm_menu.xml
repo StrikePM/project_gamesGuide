@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/purple_700"
+        app:titleTextColor="@color/white"
         android:elevation="4dp"
         android:theme="@style/Theme.AppCompat.DayNight"
         app:popupTheme="@style/Theme.AppCompat.DayNight"

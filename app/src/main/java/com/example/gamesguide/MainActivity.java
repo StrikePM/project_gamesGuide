@@ -17,6 +17,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.gamesguide.databinding.ActivityMainBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -31,7 +32,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //code work manager
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        final OneTimeWorkRequest request = new OneTimeWorkRequest.Builder(MyWorker.class).build();
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WorkManager.getInstance().enqueueUniqueWork("Notifikasi",
+                        ExistingWorkPolicy.REPLACE, request);
+            }
+        });
+
         //mengganti actionbar dengan toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -46,7 +58,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open,
                 R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
+        toggle.setDrawerIndicatorEnabled(false);
+        toggle.setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
+        toggle.setToolbarNavigationClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.openDrawer(GravityCompat.START);
+            }
+        });
         toggle.syncState();
 
         //code recycler view
@@ -59,18 +78,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         LinearLayoutManager lm = new LinearLayoutManager((this),
                 LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(lm);
-
-        //code work manager
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        final OneTimeWorkRequest request = new OneTimeWorkRequest.Builder(MyWorker.class).build();
-        binding.button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                WorkManager.getInstance().enqueueUniqueWork("Notifikasi",
-                        ExistingWorkPolicy.REPLACE, request);
-            }
-        });
     }
 
     @Override
@@ -89,8 +96,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new FragmentItems()).addToBackStack(null).commit();
                 break;
             case R.id.nav_alarm:
-                Intent iAlarm = new Intent(MainActivity.this, AlarmMenu.class);
-                startActivity(iAlarm);
+                Intent mAlarm = new Intent(MainActivity.this, AlarmMenu.class);
+                startActivity(mAlarm);
+                break;
+            case R.id.nav_cropping:
+                Intent mCrop = new Intent(MainActivity.this, CroppingImg.class);
+                startActivity(mCrop);
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

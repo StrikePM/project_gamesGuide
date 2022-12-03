@@ -53,6 +53,10 @@ public class AlarmMenu extends AppCompatActivity {
                 cancelAlarm();
             }
         });
+
+        //mengganti actionbar dengan toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
     private void cancelAlarm() {
         //untuk menggagalkan alarm yang sudah disetel
