@@ -103,6 +103,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent mCrop = new Intent(MainActivity.this, CroppingImg.class);
                 startActivity(mCrop);
                 break;
+            case R.id.nav_restapi:
+                Intent mRest = new Intent(MainActivity.this, RestApi.class);
+                startActivity(mRest);
+                break;
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
