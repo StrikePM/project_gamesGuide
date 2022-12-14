@@ -14,6 +14,7 @@ import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +26,8 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawer;
     private ActivityMainBinding binding;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
 
     RecyclerView recyclerView;
     String nama[], diff[], role[];
@@ -78,6 +81,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         LinearLayoutManager lm = new LinearLayoutManager((this),
                 LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(lm);
+
+        preferences = getSharedPreferences("AndroidHiveLogin", 0);
+        editor = preferences.edit();
     }
 
     @Override
@@ -106,6 +112,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_restapi:
                 Intent mRest = new Intent(MainActivity.this, RestApi.class);
                 startActivity(mRest);
+                break;
+            case R.id.nav_logout:
+                editor.remove("isLoggedIn");
+                editor.commit();
+                Toast.makeText(MainActivity.this, "Logged out", Toast.LENGTH_SHORT).show();
+                finish();
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

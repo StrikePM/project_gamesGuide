@@ -25,5 +25,9 @@
             android:id="@+id/nav_restapi"
             android:icon="@drawable/ic_baseline_items_24"
             android:title="RestAPI" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_baseline_arrow_back_24"
+            android:title="Log Out" />
     </group>
 </menu>
